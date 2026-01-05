@@ -1,0 +1,153 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+#container{
+    width: 500px;
+    height: 620px;
+    background-color: aqua;
+    border-radius: 5px;
+    padding: 5px;
+}
+
+#username-container{
+    display: flex;
+    width: 100%;
+    height: 60px;
+    background-color: rebeccapurple;
+}
+
+#player1{
+    width: 50%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(148, 6, 117);
+}
+#player2{
+    width: 50%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color:chocolate;
+    float: right;
+}
+
+#score-counter{
+    display: flex;
+    width: 100%;
+    height: 220px;
+    background-color: red;
+}
+
+#score-counter h1{
+    font-size: 150px;
+}
+
+#player1-score-container{
+    width: 50%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: brown;
+}
+
+#player2-score-container{
+    width: 50%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color:rgb(88, 85, 85);
+}
+
+#buttons-container{
+    display: flex;
+    width: 100%;
+    height: 210px;
+    background-color:yellow;
+    /* gap: 2px; */
+}
+
+#buttons-container button{
+    width: 100%;
+    height: 25%;
+    font-size: larger;
+    font-weight: bolder;
+}
+
+#scoring-container-p1{
+    width: 50%;
+    height: 100%;
+    background-color: rgb(44, 224, 20);
+}
+
+#scoring-container-p2{
+    width: 50%;
+    height: 100%;
+    background-color: rgb(255, 146, 4);
+}
+
+.add-points{
+    background-color: greenyellow;
+}
+
+.deduct-points{
+    background-color: rgb(252, 48, 48);
+}
+
+#decider-buttons-container{
+    display: flex;
+    width: 100%;
+    height: 70px;
+    background-color: bisque;
+}
+
+#decider-buttons-container button{
+    width: 100%;
+    height: 100%;
+}
+
+#pause-button-container{
+    width: 50%;
+    height: 100%;
+    background-color: crimson;
+}
+
+#decide-button-container{
+    width: 50%;
+    height: 100%;
+    background-color: rgb(190, 220, 20);
+}
+
+#decider-buttons-container button{
+    font-size: larger;
+    font-weight: bolder;
+}
+
+#reset-container{
+    width: 100%;
+    height: 50px;
+    background-color: blueviolet;
+}
+
+#reset-container button{
+    width: 100%;
+    height: 100%;
+    font-size: larger;
+    font-weight: bolder;
+}
