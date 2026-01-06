@@ -7,53 +7,57 @@
     <title>Score Counter</title>
 </head>
 <body>
-    <div id="container">
+    <div id="page-container">
 
-        <div id="username-container">
-            <div id="player1">
-                <h1>Player 1</h1>
+    
+        <div id="container">
+            <div id="username-container">
+                <div id="player1">
+                    <h1>Player 1</h1>
+                </div>
+                <div id="player2">
+                    <h1>Player 2</h1>
+                </div>
             </div>
-            <div id="player2">
-                <h1>Player 2</h1>
-            </div>
-        </div>
 
-        <div id="score-counter">
-            <div id="player1-score-container">
-                <h1 id="player1-score">0</h1>
+            <div id="score-counter">
+                <div id="player1-score-container">
+                    <h1 id="player1-score">0</h1>
+                </div>
+                <div id="player2-score-container">
+                    <h1 id="player2-score">0</h1>
+                </div>
             </div>
-            <div id="player2-score-container">
-                <h1 id="player2-score">0</h1>
-            </div>
-        </div>
 
-        <div id="buttons-container">
-            <div id="scoring-container-p1">
-                <button class="buttons add-points"  id="add1" data-value="1">+1</button>
-                <button class="buttons add-points" id="add2" data-value="2">+2</button>
-                <button class="buttons add-points" id="add3">+3</button>
-                <button class="buttons deduct-points" id="deduct-button-player1">DEDUCT</button>
+            <div id="buttons-container">
+                <div id="scoring-container-p1">
+                    <button class="buttons add-points"  id="add1" data-value="1">+1</button>
+                    <button class="buttons add-points" id="add2" data-value="2">+2</button>
+                    <button class="buttons add-points" id="add3">+3</button>
+                    <button class="buttons deduct-points" id="deduct-button-player1">DEDUCT</button>
+                </div>
+                <div id="scoring-container-p2">
+                    <button class="buttons add-points" id="add1-player2">+1</button>
+                    <button class="buttons add-points" id="add2-player2">+2</button>
+                    <button class="buttons add-points" id="add3-player2">+3</button>
+                    <button class="buttons deduct-points" id="deduct-button-player2">DEDUCT</button>
+                </div>
             </div>
-            <div id="scoring-container-p2">
-                <button class="buttons add-points" id="add1-player2">+1</button>
-                <button class="buttons add-points" id="add2-player2">+2</button>
-                <button class="buttons add-points" id="add3-player2">+3</button>
-                <button class="buttons deduct-points" id="deduct-button-player2">DEDUCT</button>
-            </div>
-        </div>
 
-        <div id="decider-buttons-container">
-            <div id="pause-button-container">
-                <button class="buttons" id="pause-button">PAUSE</button>
+            <div id="decider-buttons-container">
+                <div id="pause-button-container">
+                    <button class="buttons" id="pause-button">PAUSE</button>
+                </div>
+                <div id="decide-button-container">
+                    <button class="buttons" id="decide-button">DECIDE</button>
+                </div>
             </div>
-            <div id="decide-button-container">
-                <button class="buttons" id="decide-button">DECIDE</button>
-            </div>
-        </div>
 
-        <div id="reset-container">
-                <button id="reset-button">RESET</button>
-        </div>
+            <div id="reset-container">
+                    <button class="buttons" id="reset-button">RESET</button>
+            </div>
+        </div>  
+
     </div>
     <script src="script.js"></script>
 </body>

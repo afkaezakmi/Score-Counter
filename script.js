@@ -2,8 +2,8 @@ const buttons = document.querySelectorAll(".buttons");
 const player1Score = document.getElementById("player1-score");
 const player2Score = document.getElementById("player2-score");
 
-var currentPoints;
-var currentPointsP2
+var currentPoints = 0;
+var currentPointsP2 = 0;
 
 // buttons ids
 const p1add1Button = document.getElementById("add1");
@@ -15,6 +15,8 @@ const p2add3Button = document.getElementById("add3-player2");
 const p1DeductButton = document.getElementById("deduct-button-player1");
 const p2DeductButton = document.getElementById("deduct-button-player2");
 const pauseButton = document.getElementById("pause-button");
+const resetButton = document.getElementById("reset-button");
+const decideButton = document.getElementById("decide-button");
 
 buttons.forEach(button =>{
     button.addEventListener("click", () =>{
@@ -36,14 +38,14 @@ buttons.forEach(button =>{
         } else if(button.id === "add3-player2"){
             currentPointsP2 = Number(player2Score.textContent);
             player2Score.textContent = currentPointsP2 + 3; 
-        } else if(button.id === "decide-button-player1"){
+        } else if(button.id === "deduct-button-player1"){
             currentPoints = Number(player1Score.textContent);
             player1Score.textContent = currentPoints - 1;
             if(currentPoints === 0){
                 alert("DEDUCTION IS NOT APPLICABLE");
                 player1Score.textContent = 0;
             }
-        } else if(button.id === "decide-button-player2"){
+        } else if(button.id === "deduct-button-player2"){
             currentPoints = Number(player2Score.textContent);
             player2Score.textContent = currentPoints - 1;
             if(currentPoints === 0){
@@ -59,6 +61,21 @@ buttons.forEach(button =>{
                 enableButton();
                 pauseButton.textContent = "PAUSE";
             }
+        } else if(button.id === "decide-button"){
+            const p1Score = Number(player1Score.textContent);
+            const p2Score = Number(player2Score.textContent);
+
+            console.log(p1Score);
+            console.log(p2Score);
+
+            disableButton();
+            pauseButton.disabled = true;
+
+        } else if (button.id === "reset-button"){
+            player1Score.textContent = 0;
+            player2Score.textContent = 0;
+            enableButton();
+            pauseButton.disabled = false;
         }
     })
 }
