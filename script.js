@@ -18,67 +18,69 @@ const pauseButton = document.getElementById("pause-button");
 const resetButton = document.getElementById("reset-button");
 const decideButton = document.getElementById("decide-button");
 
+// history container
+const historyContainer = document.getElementById("history-container");
+
 buttons.forEach(button =>{
     button.addEventListener("click", () =>{
-        if(button.id === "add1"){
-            currentPoints = Number(player1Score.textContent);
-            player1Score.textContent = currentPoints + 1; 
-        } else if(button.id ==="add2"){
-            currentPoints = Number(player1Score.textContent);
-            player1Score.textContent = currentPoints + 2; 
-        } else if(button.id ==="add3"){
-            currentPoints = Number(player1Score.textContent);
-            player1Score.textContent = currentPoints + 3; 
-        } else if(button.id === "add1-player2"){
-            currentPointsP2 = Number(player2Score.textContent);
-            player2Score.textContent = currentPointsP2 + 1; 
-        } else if(button.id === "add2-player2"){
-            currentPointsP2 = Number(player2Score.textContent);
-            player2Score.textContent = currentPointsP2 + 2; 
-        } else if(button.id === "add3-player2"){
-            currentPointsP2 = Number(player2Score.textContent);
-            player2Score.textContent = currentPointsP2 + 3; 
-        } else if(button.id === "deduct-button-player1"){
-            currentPoints = Number(player1Score.textContent);
-            player1Score.textContent = currentPoints - 1;
-            if(currentPoints === 0){
-                alert("DEDUCTION IS NOT APPLICABLE");
-                player1Score.textContent = 0;
-            }
-        } else if(button.id === "deduct-button-player2"){
-            currentPoints = Number(player2Score.textContent);
-            player2Score.textContent = currentPoints - 1;
-            if(currentPoints === 0){
-                alert("DEDUCTION IS NOT APPLICABLE");
-                player2Score.textContent = 0;
-            }
-        } else if (button.id === "pause-button") {
+            if(button.id === "add1"){
+                currentPoints = Number(player1Score.textContent);
+                player1Score.textContent = currentPoints + 1; 
+            } else if(button.id ==="add2"){
+                currentPoints = Number(player1Score.textContent);
+                player1Score.textContent = currentPoints + 2; 
+            } else if(button.id ==="add3"){
+                currentPoints = Number(player1Score.textContent);
+                player1Score.textContent = currentPoints + 3; 
+            } else if(button.id === "add1-player2"){
+                currentPointsP2 = Number(player2Score.textContent);
+                player2Score.textContent = currentPointsP2 + 1; 
+            } else if(button.id === "add2-player2"){
+                currentPointsP2 = Number(player2Score.textContent);
+                player2Score.textContent = currentPointsP2 + 2; 
+            } else if(button.id === "add3-player2"){
+                currentPointsP2 = Number(player2Score.textContent);
+                player2Score.textContent = currentPointsP2 + 3; 
+            } else if(button.id === "deduct-button-player1"){
+                currentPoints = Number(player1Score.textContent);
+                player1Score.textContent = currentPoints - 1;
+                if(currentPoints === 0){
+                    alert("DEDUCTION IS NOT APPLICABLE");
+                    player1Score.textContent = 0;
+                }
+            } else if(button.id === "deduct-button-player2"){
+                currentPoints = Number(player2Score.textContent);
+                player2Score.textContent = currentPoints - 1;
+                if(currentPoints === 0){
+                    alert("DEDUCTION IS NOT APPLICABLE");
+                    player2Score.textContent = 0;
+                }
+            } else if (button.id === "pause-button") {
 
-            if (pauseButton.textContent === "PAUSE") {
+                if (pauseButton.textContent === "PAUSE") {
+                    disableButton();
+                    pauseButton.textContent = "RESUME";
+                } else {
+                    enableButton();
+                    pauseButton.textContent = "PAUSE";
+                }
+            } else if(button.id === "decide-button"){
+   
+
+                createHistory(player1Score, player2Score);
+            
                 disableButton();
-                pauseButton.textContent = "RESUME";
-            } else {
+                pauseButton.disabled = true;
+
+            } else if (button.id === "reset-button"){
+                player1Score.textContent = 0;
+                player2Score.textContent = 0;
                 enableButton();
+                pauseButton.disabled = false;
                 pauseButton.textContent = "PAUSE";
             }
-        } else if(button.id === "decide-button"){
-            const p1Score = Number(player1Score.textContent);
-            const p2Score = Number(player2Score.textContent);
-
-            console.log(p1Score);
-            console.log(p2Score);
-
-            disableButton();
-            pauseButton.disabled = true;
-
-        } else if (button.id === "reset-button"){
-            player1Score.textContent = 0;
-            player2Score.textContent = 0;
-            enableButton();
-            pauseButton.disabled = false;
-        }
-    })
-}
+        })
+    }
 )
 
 function disableButton(){
@@ -103,8 +105,59 @@ function enableButton(){
     p2DeductButton.disabled = false;
 }
 
-// button.addEventListener("click", () =>{
-//     var currentPoints = Number(player1Score.textContent);
-//     player1Score.textContent = currentPoints + 1; 
-// }
-// ) 
+// history container
+function createHistory(p1Score, p2Score){
+
+    const history = document.createElement('div');
+    history.classList.add('history');
+    historyContainer.appendChild(history);
+
+    // Player 1 History
+    const player1History = document.createElement('div');
+    player1History.classList.add('player1History');
+
+    const player1NameHistory = document.createElement('div');
+    player1NameHistory.classList.add("player1-name-history");
+    player1History.appendChild(player1NameHistory);
+
+    const h1Player1 = document.createElement('h1');
+    h1Player1.textContent = "Player 1"
+    player1NameHistory.appendChild(h1Player1);
+
+    const player1ScoreFinal = document.createElement('h2');
+    player1ScoreFinal.textContent = p1Score.textContent;
+    player1History.appendChild(player1ScoreFinal);
+
+    // Player 2 History
+    const player2History = document.createElement('div');
+    player2History.classList.add('player2History');
+
+    const player2NameHistory = document.createElement('div');
+    player2NameHistory.classList.add("player2-name-history");
+    player2History.appendChild(player2NameHistory);
+
+    const h1Player2 = document.createElement('h1');
+    h1Player2.textContent = "Player 2"
+    player2NameHistory.appendChild(h1Player2);
+
+    const player2ScoreFinal = document.createElement('h2');
+    player2ScoreFinal.textContent = p2Score.textContent;
+    player2History.appendChild(player2ScoreFinal);
+
+    history.appendChild(player1History);
+    history.appendChild(player2History);
+    
+}
+
+// live score settings
+
+const player1Name = document.getElementById('player1');
+
+const player1NameContainer = document.getElementById('player1-name-container');
+
+const player1NameLive = document.createElement('h1');
+player1NameLive.textContent = player1Name.textContent;
+
+player1NameContainer.appendChild(player1NameLive);
+
+
