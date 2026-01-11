@@ -178,9 +178,10 @@ body{
 }
 
 .history h2{
-    font-size: 200px;
+    font-size: 150px;
     align-self: center;
     justify-self: center;
+    margin-top: 25px;
 }
 
 .player1History{
@@ -212,3 +213,4 @@ body{
     align-items: center;
     justify-content: center;
 }
+

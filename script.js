@@ -21,6 +21,7 @@ const decideButton = document.getElementById("decide-button");
 // history container
 const historyContainer = document.getElementById("history-container");
 
+
 buttons.forEach(button =>{
     button.addEventListener("click", () =>{
             if(button.id === "add1"){
@@ -151,13 +152,53 @@ function createHistory(p1Score, p2Score){
 
 // live score settings
 
-const player1Name = document.getElementById('player1');
+// const player1Name = document.getElementById('player1');
 
-const player1NameContainer = document.getElementById('player1-name-container');
+// const player1NameContainer = document.getElementById('player1-name-container');
 
-const player1NameLive = document.createElement('h1');
-player1NameLive.textContent = player1Name.textContent;
+// const player1NameLive = document.createElement('h1');
+// player1NameLive.textContent = player1Name.textContent;
 
-player1NameContainer.appendChild(player1NameLive);
+// player1NameContainer.appendChild(player1NameLive);
 
+// const player1NameEl = document.querySelector("#player1 h1");
+// const player2NameEl = document.querySelector("#player2 h1");
 
+// function makeEditable(playerId, storageKey) {
+//   const playerDiv = document.getElementById(playerId);
+//   if (!playerDiv) return;
+
+//   const nameEl = playerDiv.querySelector("h1");
+
+//   // Load saved name
+//   const savedName = localStorage.getItem(storageKey);
+//   if (savedName) {
+//     nameEl.textContent = savedName;
+//   }
+
+//   // Make editable on click
+//   nameEl.addEventListener("click", () => {
+//     nameEl.contentEditable = "true";
+//     nameEl.focus();
+//   });
+
+//   // Save on blur or Enter
+//   nameEl.addEventListener("blur", saveName);
+//   nameEl.addEventListener("keydown", (e) => {
+//     if (e.key === "Enter") {
+//       e.preventDefault();
+//       nameEl.blur();
+//     }
+//   });
+
+//   function saveName() {
+//     nameEl.contentEditable = "false";
+//     const finalName = nameEl.textContent.trim() || "Player";
+//     nameEl.textContent = finalName;
+//     localStorage.setItem(storageKey, finalName);
+//   }
+// }
+
+// // Apply to both players
+// makeEditable("player1", "player1Name");
+// makeEditable("player2", "player2Name");
